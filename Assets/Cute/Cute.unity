@@ -260,6 +260,8 @@ GameObject:
   m_Component:
   - component: {fileID: 224152953}
   - component: {fileID: 224152954}
+  - component: {fileID: 224152955}
+  - component: {fileID: 224152956}
   m_Layer: 0
   m_Name: EurekaCup
   m_TagString: Untagged
@@ -301,6 +303,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 0
   waterShader: {fileID: 2100000, guid: 801e9b73cf51ac24bb52f4b8639ab440, type: 2}
+  liquidScript: {fileID: 0}
+  hangingObject: {fileID: 0}
+--- !u!65 &224152955
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224152952}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3000679, y: 1.6544962, z: 10.144453}
+  m_Center: {x: 7.0327606, y: 2.2116213, z: 2.627305}
+--- !u!114 &224152956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224152952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6310dd132e7df2244925124ba5bc7a45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 10
+  volume: 1
+  rho: 0
 --- !u!1 &237209137
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +553,7 @@ GameObject:
   - component: {fileID: 463506547}
   - component: {fileID: 463506546}
   - component: {fileID: 463506545}
+  - component: {fileID: 463506550}
   - component: {fileID: 463506549}
   m_Layer: 0
   m_Name: TestObject
@@ -620,6 +653,22 @@ MonoBehaviour:
   mass: 10
   volume: 1
   rho: 0
+--- !u!54 &463506550
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463506544}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &765117603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839868109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 7.02, y: 0.99, z: -0.66}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 415227154}
@@ -1365,7 +1414,6 @@ MonoBehaviour:
   moveAble: {fileID: 187187634}
   hangPoint: {fileID: 308762281}
   hangObject: {fileID: 463506549}
-  mass: 0
 --- !u!1 &2049132944
 GameObject:
   m_ObjectHideFlags: 0

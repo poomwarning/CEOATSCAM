@@ -8,9 +8,7 @@ public class ScalerScript : MonoBehaviour
     public float moveY;
     public Transform moveAble;
     public Transform hangPoint;
-
     public ObjectScript hangObject;
-    public float mass;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +19,11 @@ public class ScalerScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        moveAble.position = new Vector3(0,moveY,0);
+        moveAble.localPosition = new Vector3(0,moveY,0);
     }
 
     public void HangObejct(ObjectScript objectScript){
         hangObject = objectScript;
-        mass = hangObject.mass;
         hangObject.transform.position = hangPoint.position;
         hangObject.transform.parent = hangPoint;
     }
