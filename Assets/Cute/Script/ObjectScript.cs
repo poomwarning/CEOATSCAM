@@ -7,6 +7,8 @@ public class ObjectScript : MonoBehaviour
     [Header("Setting")]
     public float mass;
     public float volume;
+
+
     [Header("Don't need to set")]
     public float rho;
 

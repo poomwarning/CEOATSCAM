@@ -5,8 +5,10 @@ using UnityEngine;
 public class EurekaCupScript : MonoBehaviour
 {
     public float percentOfDrowning = 0;
-    public float buoyantforce = 0;
-    public float overflowWater = 0;
+    public float buoyantforce_N = 0;
+    public float overflowWater_Kg = 0;
+    public float hangingObjectOnLiquid_N = 0;
+    public float hangingObjectOnLiquid_Kg = 0;
     [Range(-0.5f,0.5f)]
     public float waterLevel;
     public Material waterShader;
@@ -44,17 +46,21 @@ public class EurekaCupScript : MonoBehaviour
         //Fb = rho liquid * V object * g(9.8f)
 
         //rho liquid <= rho Object
-        if(liquidScript.rho <= hangingObject.rho){
-            buoyantforce = hangingObject.mass * 9.8f;
-            overflowWater = buoyantforce / 9.8f;
-        }
+        // if(liquidScript.rho <= hangingObject.rho){
+        //     buoyantforce = liquidScript.rho * hangingObject.volume * 9.8f;
+        //     overflowWater = buoyantforce / 9.8f;
+        // }
 
         //rho liquid > rho Object
-        if(liquidScript.rho > hangingObject.rho){
+        // if(liquidScript.rho > hangingObject.rho){
             percentOfDrowning = hangingObject.rho/liquidScript.rho;
-            buoyantforce = hangingObject.mass * percentOfDrowning * 9.8f;
-            overflowWater = buoyantforce / 9.8f;
-        }
+            print(hangingObject.volume * percentOfDrowning);
+            print(hangingObject.volume - (hangingObject.volume * percentOfDrowning));
+            buoyantforce_N = liquidScript.rho * (hangingObject.volume * percentOfDrowning) * 9.8f;
+            overflowWater_Kg = buoyantforce_N /9.8f;
+            hangingObjectOnLiquid_N = (hangingObject.mass * 9.8f) - buoyantforce_N;
+            hangingObjectOnLiquid_Kg = hangingObjectOnLiquid_N / 9.8f;
+        // }
     }
 
 }
