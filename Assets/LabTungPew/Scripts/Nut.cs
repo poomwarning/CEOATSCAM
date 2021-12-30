@@ -10,10 +10,10 @@ public class Nut : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        rb.mass = Mass;
     }
     private void Start()
     {
-        rb.mass = Mass;
     }
     public float mass
     {
