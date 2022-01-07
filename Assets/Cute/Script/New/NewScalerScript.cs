@@ -14,7 +14,8 @@ public class NewScalerScript : MonoBehaviour
     public Text objectText;
 
     [Header("ScriptableObject")]
-    public Lab2ScriptableObject Object;
+    public NewObjectScript Object;
+    public Lab2ScriptableObject ObjectScriptable;
 
     // Start is called before the first frame update
     void Start()
@@ -41,23 +42,38 @@ public class NewScalerScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.GetComponent<NewObjectScript>() != null){
-            other.transform.parent = hangingPos;
-            other.transform.position = hangingPos.position;
+    // private void OnTriggerEnter(Collider other) {
+    //     if(other.GetComponent<NewObjectScript>() != null){
+    //         other.transform.parent = hangingPos;
+    //         other.transform.position = hangingPos.position;
 
-            Object = other.GetComponent<NewObjectScript>().Object;
-            objectText.text = "Mass = " + Object.objectMass;
-        } 
+    //         Object = other.GetComponent<NewObjectScript>().Object;
+    //         objectText.text = "Weight = " + Object.objectWeight;
+    //     } 
+    // }
+
+    public void PutObjectIn(GameObject _object){
+        moveY = 0;
+
+        _object.transform.parent = hangingPos;
+        _object.transform.position = hangingPos.position;
+
+        Object = _object.GetComponent<NewObjectScript>();
+        ObjectScriptable = Object.Object;
+        objectText.text = "Weight = " + ObjectScriptable.objectWeight + " Kg";
     }
 
-    private void OnTriggerExit(Collider other) {
-        if(other.GetComponent<NewObjectScript>() != null){
-            other.transform.parent = null;
-            other.transform.position = Vector3.zero;
+    public void TakeObjectOut(PlayerCon player){
+        if(Object != null){
+                player.objectOnHead = Object.GetComponent<NewObjectScript>();
+                Object.transform.parent = player.GetComponent<PlayerCon>().headPos;
+                Object.transform.position = player.GetComponent<PlayerCon>().headPos.position;
 
-            Object = null;
-            objectText.text = "Mass = 0";
+                Object = null;
+                ObjectScriptable = null;
+                objectText.text = "Weight = 0 Kg";
         }
     }
+
+    
 }
