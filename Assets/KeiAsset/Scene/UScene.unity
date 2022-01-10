@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48965447}
+  - component: {fileID: 48965449}
   - component: {fileID: 48965448}
   m_Layer: 0
   m_Name: tube2
@@ -166,7 +167,7 @@ Animator:
   m_GameObject: {fileID: 48965446}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dc9296ba5065e464cb4c8b005d747063, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,6 +176,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &48965449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 48965446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pho: 900
+  Height: 0
+  IsDropWater: 1
+  LiquidName: Oil
+  Setmode: 1
+  Pressure: 0
 --- !u!1 &127775577
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532520801755572280, guid: f55f366fab0b068438de60fab698b3f1, type: 3}
       propertyPath: m_Name
-      value: BaseWaterLeft
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 3532520801755572280, guid: f55f366fab0b068438de60fab698b3f1, type: 3}
       propertyPath: m_TagString
@@ -377,6 +396,29 @@ Transform:
   m_Father: {fileID: 4198337687548602159}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &250231718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3532520801755572280, guid: f55f366fab0b068438de60fab698b3f1, type: 3}
+  m_PrefabInstance: {fileID: 3532520801253381047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &250231723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250231718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pho: 0
+  Height: 0
+  IsDropWater: 0
+  LiquidName: 
+  Setmode: 0
+  Pressure: 0
 --- !u!1 &470152351
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +567,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!114 &499408293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499408288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pho: 0
+  Height: 0
+  IsDropWater: 0
+  LiquidName: 
+  Setmode: 0
+  Pressure: 0
 --- !u!4 &506690448 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3532520801755572263, guid: f55f366fab0b068438de60fab698b3f1, type: 3}
@@ -876,7 +936,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pho: 1000
-  Height: 10
+  Height: 2
+  IsDropWater: 0
+  LiquidName: Water
   Setmode: 0
   Pressure: 0
 --- !u!4 &864603698 stripped
@@ -939,7 +1001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pho: 1000
-  Height: 10
+  Height: 0
+  IsDropWater: 0
+  LiquidName: Water
   Setmode: 0
   Pressure: 0
 --- !u!54 &910173086
@@ -1351,6 +1415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   boolname: Left
+  WaterHeightDrop: 0
+  BaseRightLiquidSpawn: {fileID: 0}
+  BaseLeftLiquidSpawn: {fileID: 0}
+  NowSpawn: {fileID: 0}
+  Liquid: []
 --- !u!1 &1256923514
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,6 +2110,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   boolname: Right
+  WaterHeightDrop: 0
+  BaseRightLiquidSpawn: {fileID: 499408288}
+  BaseLeftLiquidSpawn: {fileID: 250231718}
+  NowSpawn: {fileID: 0}
+  Liquid: []
 --- !u!1 &1880275430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2280,7 +2354,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780582098010961971, guid: dd4113a9108065245a8ee03888e74857, type: 3}
       propertyPath: m_Name
-      value: BaseWaterRight
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 3780582098010961971, guid: dd4113a9108065245a8ee03888e74857, type: 3}
       propertyPath: m_TagString
@@ -2656,6 +2730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1638532968803297629}
+  - component: {fileID: 2159174348676084713}
   - component: {fileID: 2159174348676084712}
   m_Layer: 0
   m_Name: tube1
@@ -2683,6 +2758,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2159174348676084713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2159174348676084711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pho: 1000
+  Height: 0
+  IsDropWater: 1
+  LiquidName: Water
+  Setmode: 0
+  Pressure: 0
 --- !u!23 &2528797256362185194
 MeshRenderer:
   m_ObjectHideFlags: 0

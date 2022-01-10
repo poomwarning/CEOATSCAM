@@ -8,6 +8,9 @@ public class LiquidObject : MonoBehaviour
     public float pho;
     [Header("Height in cm Unit")]
     public float Height;
+    [Header("This Object Is Drop Water)")]
+    public bool IsDropWater;
+    public string LiquidName;
     [Header("Set Height by scale(T) or Set scale ny Height(F)")]
     public bool Setmode = true;
     [Header("Pressure in pascal Unit")]
@@ -16,13 +19,23 @@ public class LiquidObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Setmode == true)
+        if (IsDropWater == false)
         {
-            Height = (transform.localScale.y - 0.01f) * 100;
-        }
-        else
-        {
-            transform.localScale = new Vector3(transform.localScale.x, ((Height / 100) + 0.01f), transform.localScale.z);
+            if (Setmode == true)
+            {
+                Height = (transform.localScale.y - 0.01f) * 100;
+            }
+            else
+            {
+                if (transform.localScale.y <= ((Height / 100) + 0.01f))
+                {
+                    transform.localScale += new Vector3(0, 1, 0) * Time.deltaTime;
+                }
+                else if(transform.localScale.y > ((Height / 100) + 0.01f) && transform.localScale.y > 0.01f)
+                {
+                    transform.localScale -= new Vector3(0, 1, 0) * Time.deltaTime;
+                }
+            }
         }
         Pressure = pho * (Height/100) * 9.8f;
     }

@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PressureSum : MonoBehaviour
 {
-    public float Pressure;
+    public float Pressure = 0;
     LiquidObject[] Liquidobject;
 
     // Update is called once per frame
     void Update()
     {
         Liquidobject = GetComponentsInChildren<LiquidObject>();
+        Pressure = 0;
         if(Liquidobject != null)
         {
-            for(int count = 0;count <= Liquidobject.Length;count++)
+            for (int count = 0; count <= Liquidobject.Length - 1; count++) 
             {
-                Pressure = Liquidobject[count].Pressure;
+                Pressure += Liquidobject[count].Pressure;
             }
         }
     }
