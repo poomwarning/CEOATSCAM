@@ -12,9 +12,8 @@ public class NewEurekaCupScript : MonoBehaviour
     public Transform hangingPos;
 
     [Header("Overflow Water")]
-    [Range(-0.5f,0f)]
-    public float waterLevel;
-    public Material waterShader;
+    public Transform beakerPosition;
+    public BeakerScript beakerScript;
 
     [Header("Text")]
     public Text objectText;
@@ -53,15 +52,13 @@ public class NewEurekaCupScript : MonoBehaviour
     }
 
     void Overflow(){
-        waterShader.SetFloat("_waterLevel",waterLevel);
-
         if(Object != null){
-            if(waterLevel < 0){
-                waterLevel += Time.deltaTime * 0.5f;
+            if(beakerScript.waterLevel < 0){
+                beakerScript.waterLevel += Time.deltaTime * 0.5f;
             }
         }if(Object == null){
-            if(waterLevel > -0.5f){
-                waterLevel -= Time.deltaTime * 0.5f;
+            if(beakerScript.waterLevel > -0.5f){
+                beakerScript.waterLevel -= Time.deltaTime * 0.5f;
             }
         }
     }
@@ -92,8 +89,12 @@ public class NewEurekaCupScript : MonoBehaviour
     // }
 
     public void PutObjectIn(GameObject _object){
+        //Set position beaker
+        beakerScript.transform.parent = beakerPosition;
+        beakerScript.transform.localPosition = Vector3.zero;
+
         moveY = 0;
-        waterLevel = -.5f;
+        beakerScript.waterLevel = -.5f;
 
         _object.transform.parent = hangingPos;
         _object.transform.position = hangingPos.position;
