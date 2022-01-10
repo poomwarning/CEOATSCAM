@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NewScalerScript : MonoBehaviour
 {
     [Header("Scaler")]
-    [Range(-1f,0f)]
+    [Range(-0.1f,0f)]
     public float moveY;
     public Transform moveAble;
     public Transform hangingPos;
@@ -32,12 +32,12 @@ public class NewScalerScript : MonoBehaviour
 
     void Hanging(){
         if(Object != null){
-            if(moveY > -1){
-                moveY -= Time.deltaTime * 2;
+            if(moveY > -0.1f){
+                moveY -= Time.deltaTime * 0.2f;
             }
         }if(Object == null){
             if(moveY < 0){
-                moveY += Time.deltaTime * 2;
+                moveY += Time.deltaTime * 0.2f;
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class NewEurekaCupScript : MonoBehaviour
 {
     [Header("Scaler")]
-    [Range(-1f,0f)]
+    [Range(-0.1f,0f)]
     public float moveY;
     public Transform moveAble;
     public Transform hangingPos;
@@ -42,12 +42,12 @@ public class NewEurekaCupScript : MonoBehaviour
         moveAble.localPosition = new Vector3(0,moveY,0);
 
         if(Object != null){
-            if(moveY > -1){
-                moveY -= Time.deltaTime * 2;
+            if(moveY > -0.1){
+                moveY -= Time.deltaTime * 0.2f;
             }
         }if(Object == null){
             if(moveY < 0){
-                moveY += Time.deltaTime * 2;
+                moveY += Time.deltaTime * 0.2f;
             }
         }
     }
@@ -57,11 +57,11 @@ public class NewEurekaCupScript : MonoBehaviour
 
         if(Object != null){
             if(waterLevel < 0){
-                waterLevel += Time.deltaTime;
+                waterLevel += Time.deltaTime * 0.5f;
             }
         }if(Object == null){
             if(waterLevel > -0.5f){
-                waterLevel -= Time.deltaTime;
+                waterLevel -= Time.deltaTime * 0.5f;
             }
         }
     }
