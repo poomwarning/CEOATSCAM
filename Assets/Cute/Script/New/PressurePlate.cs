@@ -12,10 +12,14 @@ public class PressurePlate : MonoBehaviour
                 other.GetComponent<PlayerCon>().objectOnHead.transform.parent = null;
                 other.GetComponent<PlayerCon>().objectOnHead.transform.position = other.GetComponent<PlayerCon>().objectOnHead.pos;
             }
+    
             other.GetComponent<PlayerCon>().objectOnHead = _object.GetComponent<NewObjectScript>();
             _object.transform.parent = other.GetComponent<PlayerCon>().headPos;
             _object.transform.position = other.GetComponent<PlayerCon>().headPos.position;
-
+                
+            if(other.GetComponent<PlayerCon>().holdBeaker){
+                other.GetComponent<PlayerCon>().PutBeakerDown(other.GetComponent<PlayerCon>().beakerScript.pos);
+            }        
         }
     }
 

@@ -35,6 +35,8 @@ public class NewEurekaCupScript : MonoBehaviour
     {
         Hanging();
         Overflow();
+
+        // overflowWaterText.text = "Overflow Liquid Weight = " + beakerScript.overflowLiquidWeight + " Kg";
     }
 
     void Hanging(){
@@ -103,7 +105,10 @@ public class NewEurekaCupScript : MonoBehaviour
         ObjectScriptable = Object.Object;
         objectText.text = "Weight = " + ObjectScriptable.drowingObjectWeight + " Kg";
         buoyantforceText.text = "Buoyantforce = " + ObjectScriptable.Buoyantforce + " N";
-            overflowWaterText.text = "Overflow Liquid Weight = " + ObjectScriptable.overflowLiquidWeight + " Kg";
+        // overflowWaterText.text = "Overflow Liquid Weight = " + ObjectScriptable.overflowLiquidWeight + " Kg";
+        beakerScript.overflowLiquidWeight = ObjectScriptable.overflowLiquidWeight;
+
+        
     }
 
     public void TakeObjectOut(PlayerCon player){
@@ -116,7 +121,9 @@ public class NewEurekaCupScript : MonoBehaviour
                 ObjectScriptable = null;
                 objectText.text = "Weight = 0 Kg";
                 buoyantforceText.text = "Buoyantforce = 0 N";
-                overflowWaterText.text = "Overflow Liquid Weight = 0 Kg";
+                // overflowWaterText.text = "Overflow Liquid Weight = 0 Kg";
         }
     }
+
+    
 }

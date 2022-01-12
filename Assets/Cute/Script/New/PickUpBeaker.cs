@@ -16,8 +16,7 @@ public class PickUpBeaker : MonoBehaviour
     private void OnTriggerStay(Collider other) {
         if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)){
             //Set position beaker
-            beakerScript.transform.parent = beakerPosition;
-            beakerScript.transform.localPosition = Vector3.zero;
+            other.GetComponent<PlayerCon>().PickUpBeaker();
 
         }
     }

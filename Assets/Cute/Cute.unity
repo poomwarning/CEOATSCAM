@@ -1149,6 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901992b805e9f6646b95610e0147c916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beakerScript: {fileID: 1147393853}
   beakerPosition: {fileID: 357760662}
 --- !u!65 &321020974
 BoxCollider:
@@ -2560,6 +2561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterLevel: 0
   waterShader: {fileID: 2100000, guid: 801e9b73cf51ac24bb52f4b8639ab440, type: 2}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!1 &1157881117
 GameObject:
   m_ObjectHideFlags: 0
@@ -3923,6 +3925,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectOnHead: {fileID: 0}
+  beakerScript: {fileID: 1147393853}
+  holdBeaker: 0
   headPos: {fileID: 578322422}
 --- !u!1001 &1693281775
 PrefabInstance:

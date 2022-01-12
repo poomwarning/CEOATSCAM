@@ -11,6 +11,9 @@ public class PressurePlateScaler : MonoBehaviour
         if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)){
             if(other.GetComponent<PlayerCon>().objectOnHead == null && scalerScript.Object != null ){
                 scalerScript.TakeObjectOut(other.GetComponent<PlayerCon>());
+                if(other.GetComponent<PlayerCon>().holdBeaker){
+                    other.GetComponent<PlayerCon>().PutBeakerDown(other.GetComponent<PlayerCon>().beakerScript.pos);
+                }  
                 return;
             }
 
@@ -22,6 +25,9 @@ public class PressurePlateScaler : MonoBehaviour
             }
             scalerScript.PutObjectIn(_object);
 
+            if(other.GetComponent<PlayerCon>().holdBeaker){
+                other.GetComponent<PlayerCon>().PutBeakerDown(other.GetComponent<PlayerCon>().beakerScript.pos);
+            }  
         }
     }
 

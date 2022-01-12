@@ -11,6 +11,7 @@ public class PressurePlateEureka : MonoBehaviour
         if(other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E)){
             if(other.GetComponent<PlayerCon>().objectOnHead == null && eurekaCupScript.Object != null ){
                 eurekaCupScript.TakeObjectOut(other.GetComponent<PlayerCon>());
+                other.GetComponent<PlayerCon>().PutBeakerDown(other.GetComponent<PlayerCon>().beakerScript.pos);
                 return;
             }
 
@@ -22,6 +23,7 @@ public class PressurePlateEureka : MonoBehaviour
             }
             eurekaCupScript.PutObjectIn(_object);
 
+            other.GetComponent<PlayerCon>().PutBeakerDown(other.GetComponent<PlayerCon>().beakerScript.pos);
         }
     }
 
