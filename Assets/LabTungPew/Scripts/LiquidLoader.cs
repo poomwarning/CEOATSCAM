@@ -5,6 +5,7 @@ using UnityEngine;
 public class LiquidLoader : MonoBehaviour
 {
     public LiquidObj liquid;
+    public float MaxBlendValue;
     private SkinnedMeshRenderer skinnedMeshRenderer;
     // Start is called before the first frame update
     private void Awake()
@@ -23,11 +24,11 @@ public class LiquidLoader : MonoBehaviour
     }
     public void TungPew()
     {
-        StartCoroutine(SmoothBlendShape(0, 20, 2));
+        StartCoroutine(SmoothBlendShape(0, MaxBlendValue, 2));
     }
     public void NormalPew()
     {
-        StartCoroutine(SmoothBlendShape(20, 0, 1));
+        StartCoroutine(SmoothBlendShape(MaxBlendValue, 0, 1));
     }
     private IEnumerator SmoothBlendShape(float start, float end, float duration)
     {
