@@ -314,10 +314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 75
-  defualtHeightForWater: 75
-  moveDown: 10
-  moveUp: 20
+  Height: 100
+  defualtHeightForWater: 100
+  moveDown: 15
+  moveUp: 15
   IsDropWater: 1
   Pressure: 0
 --- !u!1 &127775577
@@ -537,8 +537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Height: 100
   defualtHeightForWater: 100
-  moveDown: 50
-  moveUp: 50
+  moveDown: 70
+  moveUp: 70
   IsDropWater: 1
   Pressure: 0
 --- !u!1 &250231718 stripped
@@ -1388,10 +1388,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 5
-  defualtHeightForWater: 50
+  Height: 100
+  defualtHeightForWater: 100
   moveDown: 5
-  moveUp: 10
+  moveUp: 5
   IsDropWater: 1
   Pressure: 0
 --- !u!1 &910173081 stripped
@@ -1660,10 +1660,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c6a6f2e0d66bfd4fb360a5b2495f06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Height: 35
-  defualtHeightForWater: 35
-  moveDown: 5
-  moveUp: 20
+  Height: 100
+  defualtHeightForWater: 100
+  moveDown: 30
+  moveUp: 30
   IsDropWater: 1
   Pressure: 0
 --- !u!1001 &1162788289
@@ -3213,7 +3213,7 @@ MonoBehaviour:
   Height: 100
   defualtHeightForWater: 100
   moveDown: 25
-  moveUp: 30
+  moveUp: 25
   IsDropWater: 1
   Pressure: 0
 --- !u!23 &2528797256362185194
