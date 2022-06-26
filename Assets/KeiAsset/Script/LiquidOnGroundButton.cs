@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class LiquidOnGroundButton : MonoBehaviour
 {
-    public Animator animator;
+    public LiquidObject liquid;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
-            PlayerPrefs.SetString("NowAnim", animator.name);
-            animator.SetBool("Down", !animator.GetBool("Down"));
+            other.GetComponent<CharacterController>().liquid = liquid;
         }
     }
 }

@@ -7,7 +7,6 @@ public class PressureSum : MonoBehaviour
     public float Pressure = 0;
     LiquidObject[] Liquidobject;
 
-    // Update is called once per frame
     void Update()
     {
         Liquidobject = GetComponentsInChildren<LiquidObject>();
