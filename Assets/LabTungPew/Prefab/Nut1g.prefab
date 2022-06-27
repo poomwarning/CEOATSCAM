@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4777929076824483981}
   - component: {fileID: 1141892009825407454}
   - component: {fileID: 1141892009825407448}
+  - component: {fileID: 2520343633891322154}
   - component: {fileID: 1141892009825407455}
+  - component: {fileID: 1675257010080436204}
   m_Layer: 0
   m_Name: Nut1g
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 1141892009825407453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -109,7 +111,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad6dea68b3c16841a2ad0ade4879c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mass: 0.001
+  Mass: 10
+--- !u!114 &2520343633891322154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141892009825407453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c72a64e6c2a8d64b969e6475b68e522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerCharControl: {fileID: 0}
+  ObjRB: {fileID: 0}
+  PutDownDirect: {x: 0, y: 0, z: 0}
+  IsPick: 0
 --- !u!54 &1141892009825407455
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -124,5 +142,18 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!65 &1675257010080436204
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141892009825407453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.400971, y: 1.9162679, z: 3.1732042}
+  m_Center: {x: 0.037537813, y: 0.6342763, z: -0.10256231}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Mercury
   m_EditorClassIdentifier: 
   LiquidName: Mercury
-  SurfaceTensionForce: 0.4855
+  SurfaceTensionForce: 20

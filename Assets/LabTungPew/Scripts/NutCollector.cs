@@ -6,10 +6,12 @@ public class NutCollector : MonoBehaviour
 {
     public float MassSum;
     public List<Nut> allnut;
+    public TensionManager t_Manager;
     void Start()
     {
         MassSum = 0;
         allnut = new List<Nut>();
+        t_Manager = GameObject.Find("TensionManager").GetComponent<TensionManager>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,7 @@ public class NutCollector : MonoBehaviour
     {
         allnut.Add(nut);
         MassSum += nut.mass;
+        t_Manager.CheckState();
     }
     public void RemoveNut(float mass)
     {
@@ -29,10 +32,11 @@ public class NutCollector : MonoBehaviour
             if(allnut[i].mass == mass)
             {
                 MassSum -= mass;
-                Destroy(allnut[i].gameObject);
+                //Destroy(allnut[i].gameObject);
                 allnut.RemoveAt(i);
                 allnut.RemoveAll(item => item == null);
                 Debug.Log(i);
+                t_Manager.CheckState();
                 return;
             }
         }

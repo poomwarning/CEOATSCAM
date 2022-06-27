@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SaltWater
   m_EditorClassIdentifier: 
   LiquidName: SaltWater
-  SurfaceTensionForce: 0.055
+  SurfaceTensionForce: 30
