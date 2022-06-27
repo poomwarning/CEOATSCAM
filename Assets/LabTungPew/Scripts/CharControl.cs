@@ -34,7 +34,7 @@ public class CharControl : MonoBehaviour
     {
         if (Input.GetKeyUp(PutDownKey) && PickupObject != null)
         {
-            PickupObject.GetComponent<PickableObject>().PutDownfunc();
+            PickupObject.GetComponent<PickableObject>().putObjDown(PickupObject);
         }
     }
    

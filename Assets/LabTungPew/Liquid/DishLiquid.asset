@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DishLiquid
   m_EditorClassIdentifier: 
   LiquidName: DishWashingLiquid
-  SurfaceTensionForce: 0.3
+  SurfaceTensionForce: 10

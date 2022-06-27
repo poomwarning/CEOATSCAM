@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Water
   m_EditorClassIdentifier: 
   LiquidName: Water
-  SurfaceTensionForce: 0.072
+  SurfaceTensionForce: 40

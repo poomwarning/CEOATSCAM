@@ -7,7 +7,6 @@ public class LiquidObj : ScriptableObject
 {
     public string LiquidName;
     public float SurfaceTensionForce;
-
     public string liquidName
     {
         get { return LiquidName; }

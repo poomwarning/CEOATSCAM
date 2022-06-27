@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ad6dea68b3c16841a2ad0ade4879c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mass: 0.001
+  Mass: 10
 --- !u!114 &2520343633891322154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerCharControl: {fileID: 0}
   ObjRB: {fileID: 0}
+  PutDownDirect: {x: 0, y: 0, z: 0}
   IsPick: 0
 --- !u!54 &1141892009825407455
 Rigidbody:
